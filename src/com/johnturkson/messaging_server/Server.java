@@ -21,12 +21,12 @@ public class Server {
     private Map<String, List<Socket>> users;
     private int running;
     
+    @Deprecated
     public Server(int port) {
         try {
             this.serverSocket = new ServerSocket(port);
             this.running = 0;
             this.users = new HashMap<>();
-            throw new MalformedURLException(null);
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
